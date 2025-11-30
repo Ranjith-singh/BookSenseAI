@@ -1,0 +1,28 @@
+extract data from the datasets available on kaggle into cache using boiler plate provided by kaggle
+extract the csv into the pandas.dataframe to perform data cleaning:
+    use dataWrangler extention to provide overall data discription
+    look for the missing values in the data columns using their truth values and also observe the relativity in the missing
+        visualize the data using seaborn and matplotlib.pyplot
+    we can see the rating and pages are relativity missing for some books and
+        without discription we can't recommend and book to someone.
+    check the corelation b/w these columns if they are near to 1 or -1 using spearmen method
+        then are directly or indirectly related else not related
+    in our case they are not related to each other so remove the rows that contain null values in any of these columns
+        by using the masking of | truth values of these columns and remove them from the og books
+    data consist of many categories which are not real so plot a count graph based on those categories
+        this is resolved using LLM Algorithms
+    the data which has less discriptionWords is useless so remove those
+    group the title and subtitle into new col using the numpy.where()
+    drop the unnessasary columns and export the df to csv
+theoritical knowledge about LLM's:
+    most of the LLM like gpt, claude, deepseek are trained through transformer model architecture
+    the transformer consist of encoder and decoder blocks but the LLM like gpt consist of only decoder
+    the text is broken down to tokens and tokens are grouped based on their weights similarity with other tokens and aswell as itself
+    at first the grouping of tokens based on their weights are inappropriate but through lots of training and testing
+        the weights in a group are made as close as possible through vector embeddings anf self attention mechanism
+    this thing for source text happens in the encoder block and for target text happens in the decoder block
+        when the refined self attention vetors from encoder are fed into decoder it predicts the word by word
+        translation for the source text based on decoder's refined self attention vetors
+    the input text is converted in self attention vectors and compared with already existing vector embeddings
+        and similarity score is generated based on different similarity mechanism
+    the self attention vectors are assigned similar id's in encoder aswell decoder for easy metadata retrival
