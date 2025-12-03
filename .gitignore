@@ -8,4 +8,5 @@ venv/*
 .venv/*
 share/*
 
+pyvenv.cfg
 *.env
